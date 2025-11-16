@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Database, Shield, Users, TrendingUp } from "lucide-react";
@@ -6,11 +7,13 @@ import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useCountUp } from "@/hooks/useCountUp";
 import StatCard from "@/components/StatCard";
+import { ContactFormModal } from "@/components/ContactFormModal";
 import heroFace1 from "@/assets/hero-face-1.jpg";
 import heroFace2 from "@/assets/hero-face-2.jpg";
 import heroFace3 from "@/assets/hero-face-3.jpg";
 
 const Home = () => {
+  const [contactModalOpen, setContactModalOpen] = useState(false);
   const heroAnimation = useScrollAnimation();
   const statsAnimation = useScrollAnimation();
   const featuresAnimation = useScrollAnimation();
@@ -86,10 +89,19 @@ const Home = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button size="lg" className="text-base px-8 hover:scale-105 transition-transform bg-gradient-to-r from-brand-cyan to-primary hover:shadow-lg hover:shadow-brand-cyan/20">
+                <Button 
+                  size="lg" 
+                  className="text-base px-8 hover:scale-105 transition-transform bg-gradient-to-r from-brand-cyan to-primary hover:shadow-lg hover:shadow-brand-cyan/20"
+                  onClick={() => setContactModalOpen(true)}
+                >
                   Request Early Access
                 </Button>
-                <Button size="lg" variant="outline" className="text-base px-8 hover:scale-105 transition-transform border-brand-cyan/30 hover:bg-brand-cyan/5">
+                <Button 
+                  size="lg" 
+                  variant="outline" 
+                  className="text-base px-8 hover:scale-105 transition-transform border-brand-cyan/30 hover:bg-brand-cyan/5"
+                  onClick={() => window.location.href = '/developers'}
+                >
                   View Documentation
                 </Button>
               </div>
@@ -298,7 +310,12 @@ const Home = () => {
             <p className="text-lg mb-6 opacity-95">
               Be part of the future where AI recognizes everyone—equally.
             </p>
-            <Button size="lg" variant="secondary" className="text-base px-8">
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="text-base px-8"
+              onClick={() => setContactModalOpen(true)}
+            >
               Get Started Today
             </Button>
           </div>
@@ -306,6 +323,8 @@ const Home = () => {
       </section>
 
       <Footer />
+      
+      <ContactFormModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </div>
   );
 };
