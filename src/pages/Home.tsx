@@ -4,14 +4,21 @@ import { Database, Shield, Users, TrendingUp } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useCountUp } from "@/hooks/useCountUp";
+import StatCard from "@/components/StatCard";
 import heroFace1 from "@/assets/hero-face-1.jpg";
 import heroFace2 from "@/assets/hero-face-2.jpg";
 import heroFace3 from "@/assets/hero-face-3.jpg";
 
 const Home = () => {
   const heroAnimation = useScrollAnimation();
+  const statsAnimation = useScrollAnimation();
   const featuresAnimation = useScrollAnimation();
   const whyExistAnimation = useScrollAnimation();
+  
+  // Animated counters
+  const imageCount = useCountUp({ end: 100, suffix: 'M+' }, statsAnimation.isVisible);
+  const accuracyCount = useCountUp({ end: 99.8, decimals: 1, suffix: '%' }, statsAnimation.isVisible);
   
   const features = [
     {
@@ -66,13 +73,16 @@ const Home = () => {
               </p>
               
               {/* Stats */}
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border">
-                  <div className="text-3xl font-bold text-brand-cyan mb-1">100M+</div>
+              <div 
+                ref={statsAnimation.ref}
+                className="grid grid-cols-2 gap-6 mb-8"
+              >
+                <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border hover:border-brand-cyan/50 transition-colors">
+                  <div className="text-3xl font-bold text-brand-cyan mb-1">{imageCount}</div>
                   <div className="text-sm text-muted-foreground">Facial Images</div>
                 </div>
-                <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border">
-                  <div className="text-3xl font-bold text-brand-cyan mb-1">99.8%</div>
+                <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border hover:border-brand-cyan/50 transition-colors">
+                  <div className="text-3xl font-bold text-brand-cyan mb-1">{accuracyCount}</div>
                   <div className="text-sm text-muted-foreground">Accuracy Rate</div>
                 </div>
               </div>
@@ -184,6 +194,52 @@ const Home = () => {
           </p>
         </div>
       </section>
+
+      {/* Statistics Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+              Driving Impact Through{" "}
+              <span className="bg-gradient-to-r from-brand-cyan to-primary bg-clip-text text-transparent">
+                Innovation
+              </span>
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Real numbers that demonstrate our commitment to building fair and accurate AI for everyone
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <StatCard 
+              end={100} 
+              suffix="M+" 
+              label="Facial Images" 
+              description="Diverse, ethically sourced dataset"
+            />
+            <StatCard 
+              end={99.8} 
+              suffix="%" 
+              decimals={1} 
+              label="Accuracy Rate" 
+              description="On underrepresented groups"
+            />
+            <StatCard 
+              end={30} 
+              suffix="%" 
+              label="Performance Uplift" 
+              description="vs. legacy systems"
+            />
+            <StatCard 
+              end={150} 
+              suffix="+" 
+              label="Partner Agencies" 
+              description="Across public & private sectors"
+            />
+          </div>
+        </div>
+      </section>
+
 
       {/* What We Build Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
