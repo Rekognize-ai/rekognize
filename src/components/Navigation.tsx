@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import rekognizeLogo from "@/assets/rekognize-logo.png";
+import rekognizeLogo from "@/assets/rekognize-logo.svg";
 
 const Navigation = () => {
   const location = useLocation();
