@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { FileText, Database, Shield, TrendingUp } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { ContactFormModal } from "@/components/ContactFormModal";
 
 const Research = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  
   const pipelineSteps = [
     {
       number: "01",
@@ -149,11 +153,21 @@ const Research = () => {
           <p className="text-lg text-muted-foreground mb-8">
             We welcome partnerships from universities, government agencies, researchers, and international institutions.
           </p>
-          <Button size="lg" className="text-base px-8">
+          <Button 
+            size="lg" 
+            className="text-base px-8"
+            onClick={() => setIsContactModalOpen(true)}
+          >
             Contact the Research Team
           </Button>
         </div>
       </section>
+
+      <ContactFormModal 
+        open={isContactModalOpen} 
+        onOpenChange={setIsContactModalOpen}
+        subjectPrefix="Research Team Inquiry"
+      />
 
       <Footer />
     </div>
