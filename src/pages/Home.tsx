@@ -50,8 +50,8 @@ const Home = () => {
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Animated Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/10 via-background to-brand-beige/10 animate-gradient-shift" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(var(--brand-cyan))_0%,_transparent_50%)] opacity-10 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-cyan/20 via-background to-brand-beige/20 animate-gradient-shift" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_hsl(var(--brand-cyan))_0%,_transparent_50%)] opacity-20 animate-pulse" />
         
         <div className="container mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
