@@ -70,13 +70,23 @@ export const ContactFormModal = ({ open, onOpenChange }: ContactFormModalProps) 
     setIsSubmitting(true);
     
     try {
-      // TODO: Implement actual submission logic (e.g., API call, email service)
-      // For now, we'll simulate a successful submission
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // Construct mailto link with pre-filled information
+      const subject = encodeURIComponent(`Early Access Request from ${data.company}`);
+      const body = encodeURIComponent(
+        `Name: ${data.name}\n` +
+        `Email: ${data.email}\n` +
+        `Company: ${data.company}\n\n` +
+        `Message:\n${data.message}`
+      );
+      
+      const mailtoLink = `mailto:contact@rekognizeai.com?subject=${subject}&body=${body}`;
+      
+      // Open email client
+      window.location.href = mailtoLink;
       
       toast({
-        title: "Request Submitted!",
-        description: "We'll get back to you within 24-48 hours.",
+        title: "Opening Email Client",
+        description: "Your email client will open with the pre-filled information.",
       });
       
       form.reset();
@@ -84,7 +94,7 @@ export const ContactFormModal = ({ open, onOpenChange }: ContactFormModalProps) 
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to submit request. Please try again.",
+        description: "Failed to open email client. Please try again.",
         variant: "destructive",
       });
     } finally {
@@ -179,7 +189,7 @@ export const ContactFormModal = ({ open, onOpenChange }: ContactFormModalProps) 
                 className="flex-1 bg-gradient-to-r from-brand-cyan to-primary hover:shadow-lg hover:shadow-brand-cyan/20"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? "Submitting..." : "Submit Request"}
+                {isSubmitting ? "Opening Email..." : "Send Email"}
               </Button>
             </div>
           </form>
