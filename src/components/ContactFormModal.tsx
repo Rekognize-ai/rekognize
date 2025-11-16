@@ -79,7 +79,7 @@ export const ContactFormModal = ({ open, onOpenChange }: ContactFormModalProps) 
         `Message:\n${data.message}`
       );
       
-      const mailtoLink = `mailto:contact@rekognizeai.com?subject=${subject}&body=${body}`;
+      const mailtoLink = `mailto:info@rekognize.ai?subject=${subject}&body=${body}`;
       
       // Open email client
       window.location.href = mailtoLink;
