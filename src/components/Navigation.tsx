@@ -22,9 +22,14 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              RekognizeAI
+          <Link to="/" className="flex items-center space-x-3">
+            <img 
+              src="/logo-multicolor.jpg" 
+              alt="Rekognize" 
+              className="h-10 w-auto"
+            />
+            <span className="text-xl font-bold text-brand-brown">
+              Rekognize
             </span>
           </Link>
 
