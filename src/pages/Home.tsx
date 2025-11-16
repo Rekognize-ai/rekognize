@@ -3,8 +3,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Database, Shield, Users, TrendingUp } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Home = () => {
+  const heroAnimation = useScrollAnimation();
+  const featuresAnimation = useScrollAnimation();
+  const whyExistAnimation = useScrollAnimation();
+  
   const features = [
     {
       icon: Database,
@@ -34,7 +39,12 @@ const Home = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto text-center max-w-5xl">
+        <div 
+          ref={heroAnimation.ref}
+          className={`container mx-auto text-center max-w-5xl transition-all duration-700 ${
+            heroAnimation.isVisible ? 'animate-fade-up' : 'opacity-0'
+          }`}
+        >
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             The World's Largest Proprietary Dataset of{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
@@ -45,10 +55,10 @@ const Home = () => {
             Powering the next generation of fair, accurate, and bias-resistant facial recognition.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-base px-8">
+            <Button size="lg" className="text-base px-8 hover:scale-105 transition-transform">
               Request Early Access
             </Button>
-            <Button size="lg" variant="outline" className="text-base px-8">
+            <Button size="lg" variant="outline" className="text-base px-8 hover:scale-105 transition-transform">
               Partner With Us
             </Button>
           </div>
@@ -57,7 +67,12 @@ const Home = () => {
 
       {/* IP Moat Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-card">
-        <div className="container mx-auto max-w-6xl">
+        <div 
+          ref={featuresAnimation.ref}
+          className={`container mx-auto max-w-6xl transition-all duration-700 ${
+            featuresAnimation.isVisible ? 'animate-fade-in' : 'opacity-0'
+          }`}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-center">
             Our Unique IP Moat
           </h2>
@@ -67,7 +82,11 @@ const Home = () => {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
             {features.map((feature, index) => (
-              <Card key={index} className="border-border hover:shadow-lg transition-shadow">
+              <Card 
+                key={index} 
+                className="border-border hover:shadow-lg transition-all hover:scale-105 hover:-translate-y-1"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
                 <CardContent className="pt-6">
                   <feature.icon className="w-12 h-12 text-primary mb-4" />
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
@@ -85,7 +104,12 @@ const Home = () => {
 
       {/* Why We Exist Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl text-center">
+        <div 
+          ref={whyExistAnimation.ref}
+          className={`container mx-auto max-w-4xl text-center transition-all duration-700 ${
+            whyExistAnimation.isVisible ? 'animate-fade-up' : 'opacity-0'
+          }`}
+        >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
             Why RekognizeAI Exists
           </h2>

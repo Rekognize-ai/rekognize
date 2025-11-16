@@ -3,8 +3,13 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Code, Smartphone, Activity, CheckCircle } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Developers = () => {
+  const heroAnimation = useScrollAnimation();
+  const suiteAnimation = useScrollAnimation();
+  const benefitsAnimation = useScrollAnimation();
+  
   const sdks = [
     { name: "Python", icon: Code },
     { name: "JavaScript / Node", icon: Code },
@@ -26,7 +31,12 @@ const Developers = () => {
       
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto text-center max-w-4xl">
+        <div 
+          ref={heroAnimation.ref}
+          className={`container mx-auto text-center max-w-4xl transition-all duration-700 ${
+            heroAnimation.isVisible ? 'animate-fade-up' : 'opacity-0'
+          }`}
+        >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
             For Developers &{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
