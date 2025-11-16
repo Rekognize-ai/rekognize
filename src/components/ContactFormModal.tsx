@@ -50,9 +50,10 @@ type ContactFormValues = z.infer<typeof contactFormSchema>;
 interface ContactFormModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  subjectPrefix?: string;
 }
 
-export const ContactFormModal = ({ open, onOpenChange }: ContactFormModalProps) => {
+export const ContactFormModal = ({ open, onOpenChange, subjectPrefix = "Early Access Request" }: ContactFormModalProps) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -71,7 +72,7 @@ export const ContactFormModal = ({ open, onOpenChange }: ContactFormModalProps) 
     
     try {
       // Construct mailto link with pre-filled information
-      const subject = encodeURIComponent(`Early Access Request from ${data.company}`);
+      const subject = encodeURIComponent(`${subjectPrefix} from ${data.company}`);
       const body = encodeURIComponent(
         `Name: ${data.name}\n` +
         `Email: ${data.email}\n` +
