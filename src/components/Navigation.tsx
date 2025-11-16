@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import rekognizeLogo from "@/assets/rekognize-logo.png";
 
 const Navigation = () => {
   const location = useLocation();
@@ -22,15 +23,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center">
             <img 
-              src="/logo-multicolor.jpg" 
+              src={rekognizeLogo} 
               alt="Rekognize" 
-              className="h-10 w-auto"
+              className="h-12 w-auto"
             />
-            <span className="text-xl font-bold text-brand-brown">
-              Rekognize
-            </span>
           </Link>
 
           {/* Desktop Navigation */}
