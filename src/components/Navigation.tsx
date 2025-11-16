@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import rekognizeLogo from "@/assets/rekognize-logo.svg";
+import { ContactFormModal } from "@/components/ContactFormModal";
 
 const Navigation = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -44,7 +46,12 @@ const Navigation = () => {
                 {item.name}
               </Link>
             ))}
-            <Button variant="default" size="sm" className="ml-4">
+            <Button 
+              variant="default" 
+              size="sm" 
+              className="ml-4"
+              onClick={() => setContactModalOpen(true)}
+            >
               Request Access
             </Button>
           </div>
@@ -74,13 +81,23 @@ const Navigation = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button variant="default" size="sm" className="w-full">
+              <Button 
+                variant="default" 
+                size="sm" 
+                className="w-full"
+                onClick={() => {
+                  setContactModalOpen(true);
+                  setMobileMenuOpen(false);
+                }}
+              >
                 Request Access
               </Button>
             </div>
           </div>
         )}
       </div>
+      
+      <ContactFormModal open={contactModalOpen} onOpenChange={setContactModalOpen} />
     </nav>
   );
 };
