@@ -1,21 +1,34 @@
 import { Linkedin, Instagram, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
+import rekognizeLogo from "@/assets/rekognize-logo.svg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-background/95 backdrop-blur-md border-t border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          {/* Left Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          {/* Left Section - Logo */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <Link to="/" className="flex items-center">
+              <img 
+                src={rekognizeLogo} 
+                alt="Rekognize" 
+                className="h-10 w-auto"
+              />
+            </Link>
+            <p className="text-sm text-muted-foreground mt-4">
+              Responsible AI Built for Justice
+            </p>
+          </div>
+
+          {/* Center Section - Social Links */}
+          <div className="text-center">
+            <h3 className="text-lg font-semibold mb-4 text-foreground">
               Connect With Us
             </h3>
-            <p className="text-muted-foreground mb-6 max-w-md">
-              Follow our journey as we build the world's most equitable AI system.
-            </p>
-            <div className="flex space-x-6">
+            <div className="flex justify-center space-x-6">
               <a
                 href="https://www.linkedin.com/company/rekognizeai"
                 target="_blank"
@@ -46,13 +59,10 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Right Section */}
+          {/* Right Section - Copyright */}
           <div className="text-left md:text-right">
             <p className="text-sm text-muted-foreground">
-              © {currentYear} RekognizeAI
-            </p>
-            <p className="text-sm font-medium mt-2 text-foreground/80">
-              Responsible AI Built for Justice
+              © {currentYear} RekognizeAI. All rights reserved.
             </p>
           </div>
         </div>
