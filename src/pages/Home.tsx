@@ -57,10 +57,7 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div 
-              ref={heroAnimation.ref}
-              className={`transition-all duration-700 ${
-                heroAnimation.isVisible ? 'animate-fade-up' : 'opacity-0'
-              }`}
+              className="transition-all duration-700 animate-fade-up"
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
                 Fair AI Recognition for{" "}
@@ -98,7 +95,7 @@ const Home = () => {
             </div>
 
             {/* Right Visual - Face Detection Grid */}
-            <div className="relative lg:block hidden">
+            <div className="relative lg:block hidden animate-fade-in">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
                   <div className="relative group overflow-hidden rounded-lg animate-fade-in" style={{ animationDelay: '200ms' }}>
