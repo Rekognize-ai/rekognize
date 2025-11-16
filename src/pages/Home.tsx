@@ -57,7 +57,8 @@ const Home = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div 
-              className="transition-all duration-700 animate-fade-up"
+              className="transition-all duration-700 opacity-0 translate-y-8 animate-fade-up"
+              style={{ animationDelay: '100ms' }}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
                 Fair AI Recognition for{" "}
@@ -95,34 +96,34 @@ const Home = () => {
             </div>
 
             {/* Right Visual - Face Detection Grid */}
-            <div className="relative lg:block hidden animate-fade-in">
+            <div className="relative lg:block hidden opacity-0 animate-fade-in" style={{ animationDelay: '300ms' }}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-4">
-                  <div className="relative group overflow-hidden rounded-lg animate-fade-in" style={{ animationDelay: '200ms' }}>
+                  <div className="relative group overflow-hidden rounded-lg opacity-0 animate-fade-in" style={{ animationDelay: '400ms' }}>
                     <img 
                       src={heroFace1} 
                       alt="AI facial recognition technology detecting diverse faces" 
-                      className="w-full h-auto object-cover transition-transform group-hover:scale-105"
+                      className="w-full h-auto object-cover transition-transform group-hover:scale-110 duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-cyan/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
-                  <div className="relative group overflow-hidden rounded-lg animate-fade-in" style={{ animationDelay: '400ms' }}>
+                  <div className="relative group overflow-hidden rounded-lg opacity-0 animate-fade-in" style={{ animationDelay: '600ms' }}>
                     <img 
                       src={heroFace3} 
                       alt="Accurate facial recognition for people of color" 
-                      className="w-full h-auto object-cover transition-transform group-hover:scale-105"
+                      className="w-full h-auto object-cover transition-transform group-hover:scale-110 duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-cyan/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </div>
                 <div className="mt-8">
-                  <div className="relative group overflow-hidden rounded-lg animate-fade-in" style={{ animationDelay: '300ms' }}>
+                  <div className="relative group overflow-hidden rounded-lg opacity-0 animate-fade-in" style={{ animationDelay: '500ms' }}>
                     <img 
                       src={heroFace2} 
                       alt="Bias-resistant facial recognition AI" 
-                      className="w-full h-auto object-cover transition-transform group-hover:scale-105"
+                      className="w-full h-auto object-cover transition-transform group-hover:scale-110 duration-500"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-cyan/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-brand-cyan/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </div>
               </div>

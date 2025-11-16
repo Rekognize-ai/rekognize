@@ -125,17 +125,26 @@ All colors MUST be HSL.
   @keyframes gradient-shift {
     0% {
       background-position: 0% 50%;
+      opacity: 0.2;
+    }
+    25% {
+      opacity: 0.3;
     }
     50% {
       background-position: 100% 50%;
+      opacity: 0.2;
+    }
+    75% {
+      opacity: 0.25;
     }
     100% {
       background-position: 0% 50%;
+      opacity: 0.2;
     }
   }
   
   .animate-gradient-shift {
-    background-size: 200% 200%;
-    animation: gradient-shift 8s ease-in-out infinite;
+    background-size: 400% 400%;
+    animation: gradient-shift 6s ease-in-out infinite;
   }
 }
