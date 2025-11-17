@@ -26,7 +26,7 @@ const Home = () => {
   const features = [
     {
       icon: Database,
-      title: "100M+ Facial Images",
+      title: "100M+ Facial Datasets",
       description: "Real-world, diverse, multi-angle datasets captured in high-variance environments",
     },
     {
