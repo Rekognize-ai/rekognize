@@ -64,9 +64,9 @@ const Home = () => {
               style={{ animationDelay: '100ms' }}
             >
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Fair AI Recognition for{" "}
+                World's first facial recognition algorithm{" "}
                 <span className="bg-gradient-to-r from-brand-cyan via-primary to-accent bg-clip-text text-transparent">
-                  Everyone
+                  optimized for people of color and other minority groups
                 </span>
               </h1>
               <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-xl">
@@ -80,7 +80,7 @@ const Home = () => {
               >
                 <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border hover:border-brand-cyan/50 transition-colors">
                   <div className="text-3xl font-bold text-brand-cyan mb-1">{imageCount}</div>
-                  <div className="text-sm text-muted-foreground">Facial Images</div>
+                  <div className="text-sm text-muted-foreground">Facial Datasets</div>
                 </div>
                 <div className="bg-card/50 backdrop-blur-sm p-4 rounded-lg border border-border hover:border-brand-cyan/50 transition-colors">
                   <div className="text-3xl font-bold text-brand-cyan mb-1">{accuracyCount}</div>
