@@ -31,7 +31,7 @@ const Home = () => {
     },
     {
       icon: Shield,
-      title: "Ethically Collected",
+      title: "Ethically sourced",
       description: "Strict compliance & governance with secure public-sector partnerships",
     },
     {
