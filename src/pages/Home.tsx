@@ -37,7 +37,7 @@ const Home = () => {
     {
       icon: Users,
       title: "Diverse Dataset",
-      description: "The largest private dataset of persons of color globally",
+      description: "The largest proprietary dataset of persons of color globally",
     },
     {
       icon: TrendingUp,
@@ -160,7 +160,7 @@ const Home = () => {
             Our Unique IP Moat
           </h2>
           <p className="text-lg text-muted-foreground mb-12 max-w-4xl mx-auto text-center">
-            RekognizeAI owns and curates the largest private dataset of persons of color globally, sourced from secure public-sector partnerships, correctional facilities, mobile data capture systems, and controlled institutional pipelines.
+            RekognizeAI owns and curates the largest proprietary dataset of persons of color globally, sourced from secure public-sector partnerships, correctional facilities, mobile data capture systems, and controlled institutional pipelines.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
@@ -244,7 +244,7 @@ const Home = () => {
               end={150} 
               suffix="+" 
               label="Partner Agencies" 
-              description="Across public & private sectors"
+              description="Across public & proprietary sectors"
             />
           </div>
         </div>
