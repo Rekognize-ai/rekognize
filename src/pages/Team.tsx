@@ -16,13 +16,8 @@ const Team = () => {
       description: "Leads all engineering, infrastructure, and model development.",
     },
     {
-      name: "Ridwan Amure",
-      role: "Lead AI/ML Engineer",
-      description: "Heads model architecture, training pipelines, and optimization.",
-    },
-    {
       name: "Adedapo Adeniyi",
-      role: "Community Manager",
+      role: "COO",
       description: "Oversees external relations, partnerships, user advocacy.",
     },
   ];
