@@ -262,7 +262,7 @@ const Home = () => {
               <CardContent className="pt-6">
                 <h3 className="text-xl font-semibold mb-3">Bias-Resistant Facial Recognition Algorithm</h3>
                 <p className="text-muted-foreground">
-                  Advanced AI models optimized for accuracy across all demographics
+                  Advanced AI models optimized for accuracy for people of color and other minority groups
                 </p>
               </CardContent>
             </Card>
