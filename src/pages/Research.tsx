@@ -13,7 +13,7 @@ const Research = () => {
     {
       number: "01",
       title: "Data Acquisition & Governance",
-      description: "All data is legally and ethically sourced",
+      description: "All data are legally and ethically sourced",
       icon: Database,
     },
     {
