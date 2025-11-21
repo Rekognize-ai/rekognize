@@ -4,6 +4,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import abrahamImage from "@/assets/abraham.jpeg";
 import dapoImage from "@/assets/dapo.jpeg";
+import kabiruImage from "@/assets/kabiru.jpeg";
 
 const Team = () => {
   const leadership = [
@@ -18,6 +19,8 @@ const Team = () => {
       name: "Kabiru Okeleye",
       role: "CTO",
       description: "Leads all engineering, infrastructure, and model development.",
+      image: kabiruImage,
+      linkedin: "https://www.linkedin.com/in/kabiru-okeleye-b80a22103",
     },
     {
       name: "Adedapo Adeniyi",
