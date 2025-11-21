@@ -3,6 +3,7 @@ import { User, Linkedin } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import abrahamImage from "@/assets/abraham.jpeg";
+import dapoImage from "@/assets/dapo.jpeg";
 
 const Team = () => {
   const leadership = [
@@ -22,6 +23,8 @@ const Team = () => {
       name: "Adedapo Adeniyi",
       role: "COO",
       description: "Oversees external relations, partnerships, user advocacy.",
+      image: dapoImage,
+      linkedin: "https://www.linkedin.com/in/adedapoadeniyi",
     },
   ];
 
