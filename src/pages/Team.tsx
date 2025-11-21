@@ -1,7 +1,8 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { User } from "lucide-react";
+import { User, Linkedin } from "lucide-react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import abrahamImage from "@/assets/abraham.jpeg";
 
 const Team = () => {
   const leadership = [
@@ -9,6 +10,8 @@ const Team = () => {
       name: "Adeyemo Opeyemi",
       role: "CEO & Founder",
       description: "Visionary leader driving the mission for responsible AI.",
+      image: abrahamImage,
+      linkedin: "https://www.linkedin.com/in/opeyemi-adeyemo-a41823208",
     },
     {
       name: "Kabiru Okeleye",
@@ -52,11 +55,31 @@ const Team = () => {
               <Card key={index} className="border-border hover:shadow-lg transition-shadow">
                 <CardContent className="pt-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
-                      <User className="w-8 h-8 text-white" />
-                    </div>
+                    {member.image ? (
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-16 h-16 rounded-full object-cover flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+                        <User className="w-8 h-8 text-white" />
+                      </div>
+                    )}
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-1">{member.name}</h3>
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="text-xl font-bold">{member.name}</h3>
+                        {member.linkedin && (
+                          <a 
+                            href={member.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary hover:text-primary/80 transition-colors"
+                          >
+                            <Linkedin className="w-5 h-5" />
+                          </a>
+                        )}
+                      </div>
                       <p className="text-primary font-medium mb-2">{member.role}</p>
                       <p className="text-muted-foreground">{member.description}</p>
                     </div>
